@@ -3,6 +3,7 @@ const restify = require('restify');
 
 // Server setup, handle query and form params
 const server = restify.createServer();
+server.use(restify.CORS());
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
@@ -12,7 +13,7 @@ function translate(input) {
 }
 
 function respond(req, res, next) {
-    res.send(translate(req.params.q));
+  res.send({translated: translate(req.params.q)});
     next();
 }
 
