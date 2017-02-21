@@ -1,0 +1,10 @@
+{
+  "name": "automatic-waddle",
+  "version": "0.0.1",
+  "dependencies": {
+    "create-react-app": "^1.0.4",
+    "express": "^4.14.1",
+    "node-emoji": "^1.5.1",
+    "restify": "^4.3.0"
+  }
+}
