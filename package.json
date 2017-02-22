@@ -5,5 +5,11 @@
     "create-react-app": "^1.0.4",
     "node-emoji": "^1.5.1",
     "restify": "^4.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "start": "node_modules/.bin/nodemon --watch src/backend src/backend/service.js"
   }
 }
