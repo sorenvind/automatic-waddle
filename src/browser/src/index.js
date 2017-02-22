@@ -7,7 +7,7 @@ import './index.css';
 
 // Wiring
 const parsedUrl = url.parse(window.location.href, true);
-const backendPort = parsedUrl.query.backend;
+const backendPort = parsedUrl.query.backend || 1313;
 
 // Entry point
 ReactDOM.render(

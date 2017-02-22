@@ -1,3 +1,4 @@
+const path = require('path');
 const restify = require('restify');
 
 // Server setup, handle query and form params
@@ -7,8 +8,9 @@ server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
 // Path handlers
-server.get(/.*/, restify.serveStatic({
-  directory: path.join(__dirname, '../browser/build')
+server.get(/\/.*/, restify.serveStatic({
+  directory: path.resolve(__dirname, '../browser/build'),
+  default: 'index.html'
 }));
 
 const WebServer = {
@@ -20,4 +22,7 @@ const WebServer = {
   }
 };
 
+if (require.main === module) {
+  WebServer.start(8080);
+}
 module.exports = WebServer;

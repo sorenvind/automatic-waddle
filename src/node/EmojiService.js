@@ -8,13 +8,13 @@ server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
 // Path handlers
-function translate(input) {
-    return emoji.emojify(input);
+function translate(inputString) {
+  return emoji.emojify(inputString);
 }
 
 function respond(req, res, next) {
   res.send({translated: translate(req.params.q)});
-    next();
+  next();
 }
 
 server.get('/aaw', respond);
@@ -29,6 +29,8 @@ const EmojiService = {
   }
 };
 
-EmojiService.start(1313);
+if (require.main === module) {
+  EmojiService.start(1313);
+}
 
 module.exports = EmojiService;
