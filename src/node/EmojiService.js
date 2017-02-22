@@ -20,7 +20,15 @@ function respond(req, res, next) {
 server.get('/aaw', respond);
 server.post('/aaw', respond);
 
-// Setup server
-server.listen(8080, function () {
-    console.log('restify-%s-%s listening at %s', emoji.get('horse'), emoji.get('fish'), server.url);
-});
+const EmojiService = {
+  start: port => {
+    // Setup server
+    server.listen(port, function () {
+      console.log('EmojiService (%s-%s) listening at %s', emoji.get('horse'), emoji.get('fish'), server.url);
+    });
+  }
+};
+
+EmojiService.start(1313);
+
+module.exports = EmojiService;
