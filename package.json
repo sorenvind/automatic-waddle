@@ -4,13 +4,15 @@
   "dependencies": {
     "create-react-app": "^1.0.4",
     "node-emoji": "^1.5.1",
-    "restify": "^4.3.0"
+    "restify": "^4.3.0",
+    "electron": "^1.4.15"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
   },
   "scripts": {
     "emoji": "node_modules/.bin/nodemon --watch src/node src/node/EmojiService.js",
-    "serve": "node_modules/.bin/nodemon --watch src/node src/node/WebServer.js"
+    "serve": "node_modules/.bin/nodemon --watch src/node src/node/WebServer.js",
+    "electron": "node_modules/.bin/electron pkg/electron"
   }
 }
