@@ -28,9 +28,7 @@ export default class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo"/>
           <form onSubmit={event => event.preventDefault()}>
-            <label>
-              <input type="text" onChange={this.handleChange} />
-            </label>
+            <input type="text" onChange={this.handleChange} />
           </form>
           {this.state.translated}
         </div>

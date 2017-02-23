@@ -10,6 +10,7 @@
     "nodemon": "^1.11.0"
   },
   "scripts": {
-    "start": "node_modules/.bin/nodemon --watch src/node src/node/EmojiService.js"
+    "emoji": "node_modules/.bin/nodemon --watch src/node src/node/EmojiService.js",
+    "serve": "node_modules/.bin/nodemon --watch src/node src/node/WebServer.js"
   }
 }
